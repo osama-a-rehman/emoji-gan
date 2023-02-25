@@ -366,4 +366,10 @@ def train_mode():
     dcgan.train(epochs=5000, batch_size=26, save_interval=50)
 
 if __name__ == '__main__':
-    train_mode()
+    if len(sys.argv) == 2:
+        if sys.argv[1] == '1':
+            generate_mode()
+        elif sys.argv[1] == '0':
+            train_mode()
+        else:
+            print("Unexpected Input Value!")
